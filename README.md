@@ -1,26 +1,31 @@
 # Visualization and Analysis of FITS
 ## Visualization and analysis of astronomical images
-This repository contains scripts for visualizing astronomical data from FITS files. It includes the fits_data_visualization.py script for detailed slice-by-slice visualization, the fits_volume.py script for 3D volume visualization, and test scripts to validate their functionalities.
+This repository contains scripts for visualizing astronomical data from FITS files. It includes the `fits_data_visualization.py` script for detailed slice-by-slice visualization, the `fits_volume.py` script for 3D volume visualization, and test scripts to validate their functionalities.
+
 ## Prerequisites
 - Python 3
 - Plotly
 - Astropy
 - Numpy
 - Matplotlib
-- OpenCV (for testing_visualization.py)
-- Google Colab (for fits_drive_upload.py)
+- OpenCV (for `testing_visualization.py`)
+- Google Colab (for `fits_drive_upload.py`)
+
 ## Installation
-Ensure you have the required libraries installed. You can install them using pip:
-%pip install plotly astropy numpy matplotlib opencv-python
+**Ensure you have the required libraries installed. You can install them using pip:** 
+
+```pip install plotly astropy numpy matplotlib opencv-python```
+
 ## Main Script: fits_data_visualization.py
 ### Detailed Description
 The fits_data_visualization.py script is designed to visualize astronomical data contained in FITS files in a detailed and interactive manner. This script is particularly focused on providing a clear view of each individual slice within the FITS file, alongside computed astronomical parameters such as brightness and distance.
 ### Usage
-1- Download FITS File: Obtain a FITS file containing astronomical data. These files are typically used in astrophysics and astronomy for storing image data, spectral data, or other multi-dimensional datasets.
-2- Set File Path: In the script, locate the fits_file_path variable and set it to the path of your downloaded FITS file.
-3- Run the Script: Execute the script in your Python environment. You can run it from a terminal or an IDE that supports Python:
+1. **Download FITS File**: Obtain a FITS file containing astronomical data. These files are typically used in astrophysics and astronomy for storing image data, spectral data, or other multi-dimensional datasets.
 
-python fits_data_visualization.py
+2. **Set File Path**: In the script, locate the `fits_file_path` variable and set it to the path of your downloaded FITS file.
+
+3. **Run the Script**: Execute the script in your Python environment. You can run it from a terminal or an IDE that supports Python:
+```pip install plotly astropy numpy matplotlib opencv-python```
 ### How it works?
 - Open FITS File: The script uses Astropy's fits module to open and read data from the specified FITS file. Astropy handles the FITS standard, allowing for efficient and accurate data manipulation.
 - Preprocess Data: The data is preprocessed to handle NaN and infinite values, ensuring that the dataset is clean and ready for visualization.
