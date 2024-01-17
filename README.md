@@ -1,2 +1,2 @@
-# Visualization_Analysis_FITS
+# Visualization and Analysis of FITS
 Visualization and analysis of astronomical images
