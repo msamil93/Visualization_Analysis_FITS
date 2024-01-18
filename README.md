@@ -1,7 +1,7 @@
 # Visualization and Analysis of FITS
 
 ## Visualization and Analysis of Astronomical Images
-This repository contains scripts for visualizing astronomical data from FITS files. It includes the `fits_data_visualization.py` script for detailed slice-by-slice visualization, the `fits_volume.py` script for 3D volume visualization, and test scripts to validate their functionalities.
+This repository contains scripts for visualizing astronomical data from FITS files. It includes the `fits_data_visualization.ipynb` script for detailed slice-by-slice visualization, the `fits_volume.ipynb` script for 3D volume visualization, and test scripts to validate their functionalities.
 
 ## Prerequisites
 - Python 3
@@ -9,17 +9,17 @@ This repository contains scripts for visualizing astronomical data from FITS fil
 - Astropy
 - Numpy
 - Matplotlib
-- OpenCV (for `testing_visualization.py`)
-- Google Colab (for `fits_drive_upload.py`)
+- OpenCV (for `testing_visualization.ipynb`)
+- Google Colab (for `fits_drive_upload.ipynb`)
 
 ## Installation
 **Ensure you have the required libraries installed. You can install them using pip:** 
 
 ```pip install plotly astropy numpy matplotlib opencv-python```
 
-## Main Script: fits_data_visualization.py
+## Main Script: fits_data_visualization.ipynb
 ### Detailed Description
-The `fits_data_visualization.py` script is designed to visualize astronomical data contained in FITS files in a detailed and interactive manner. This script is particularly focused on providing a clear view of each individual slice within the FITS file, alongside computed astronomical parameters such as brightness and distance.
+The `fits_data_visualization.ipynb` script is designed to visualize astronomical data contained in FITS files in a detailed and interactive manner. This script is particularly focused on providing a clear view of each individual slice within the FITS file, alongside computed astronomical parameters such as brightness and distance.
 
 ### Usage
 1. **Download FITS File**: Obtain a FITS file containing astronomical data. These files are typically used in astrophysics and astronomy for storing image data, spectral data, or other multi-dimensional datasets.
@@ -66,7 +66,7 @@ The `fits_data_visualization.py` script is designed to visualize astronomical da
   ra_corners = [wcs_corner[0] for wcs_corner in wcs_corners]
   dec_corners = [wcs_corner[1] for wcs_corner in wcs_corners]
 
-  #### Output:
+#### Output:
 The result is an array of celestial coordinates (RA and Dec) corresponding to the input pixel coordinates. This accurate mapping is essential for astronomical analysis and research.
 
 The `wcs.all_pix2world` method ensures a precise and adaptable transformation of coordinates, suitable for the diverse WCS configurations in different FITS files.
@@ -95,7 +95,7 @@ Where:
 These formulas take into account the observed velocities and the geometry of the Milky Way to calculate the distances. The 'near' distance assumes the object is closer to us than the tangent point, whereas the 'far' distance assumes it is further away.
 
 ### Brightness and Opacity Calculation
-In the `fits_data_visualization.py` script, brightness is a critical factor in visualizing each slice of the FITS data. Brightness is determined by analyzing the pixel values within each slice. Here's how the process works:
+In the `fits_data_visualization.ipynb` script, brightness is a critical factor in visualizing each slice of the FITS data. Brightness is determined by analyzing the pixel values within each slice. Here's how the process works:
 
 #### Pixel Value Analysis
 Each pixel in a slice contains data that, when aggregated, represents the total light or energy captured from that particular region of space.
@@ -115,6 +115,7 @@ Opacity in the visualization serves as a visual indicator of brightness. By sett
 
 - **Enhanced Depth Perception:** Using opacity in this way also helps to give a sense of depth to the visualization, as it simulates the way light interacts with materials in the real world.
 
+![Plotly Toolbar](https://github.com/msamil93/Visualization_Analysis_FITS/blob/main/assets/visualisation_neardist.png?raw=true)
 ### Distance Calculation
 Distance calculations in the script are based on the user's selection of the 'near' or 'far' method. These calculations are rooted in astronomical principles and involve the following steps:
 
@@ -133,21 +134,91 @@ These calculations allow for the accurate representation of each slice's positio
 The script employs Plotly's Mesh3d to create a 3D interactive visualization. Each slice is represented with its corresponding brightness and distance, allowing for a detailed exploration of the data. The visualization is interactive, enabling users to rotate, zoom, and pan through the data for thorough examination.
 
 #### Interactive Exploration with Plotly Toolbar
-The visualization created by `fits_data_visualization.py` includes an interactive toolbar located at the top right corner of the visualization pane. This toolbar provides various tools that enhance the interactivity and usability of the visualization, allowing users to:
+The visualization created by `fits_data_visualization.ipynb` includes an interactive toolbar located at the top right corner of the visualization pane. This toolbar provides various tools that enhance the interactivity and usability of the visualization, allowing users to:
 
-![Plotly Toolbar](C:/Users/ASUS/Downloads/Plotly Toolbar.png)
+![Plotly Toolbar](https://github.com/msamil93/Visualization_Analysis_FITS/blob/main/assets/Plotly%20Toolbar.png?raw=true)
+
 
 - **Zoom In/Out:** Magnify or shrink the view of the visualization.
 - **Pan:** Click and drag to move the visualization within the pane.
-- **Box Select/Lasso Select:** Select specific areas or points within the visualization for closer inspection.
 - **Orbit Rotation:** Click and drag to rotate the 3D visualization around its center point.
 - **Turntable Rotation:** Rotate the visualization as if it were on a turntable.
 - **Reset Camera:** Return the view to the original state.
-- **Autoscale:** Adjust the visualization to fit the data within the pane automatically.
-- **Toggle Spike Lines:** Show or hide spike lines to aid in aligning with the axis ticks.
-- **Hover Information:** Display detailed information about specific data points when hovering over them.
+- **Reset Camera to last save:** Return the view to the last save.
 - **Snapshot:** Take a snapshot of the current view of the visualization.
 
 Each of these tools can be clicked to activate or deactivate, providing a flexible way to interact with the data. Additionally, users can use the camera icons to switch between different preset views of the visualization, such as top-down or side views.
 
+## Additional Script: fits_volume.ipynb
+
+### Usage
+Similar to the main script, `fits_volume.ipynb` visualizes the data as a 3D volume. To run the script in a Python environment, use the following command:
+
+```python fits_volume.ipynb```
+
+![Plotly Toolbar](https://github.com/msamil93/Visualization_Analysis_FITS/blob/main/assets/volume2.png?raw=true)
+
+### How It Works
+- Reads data from a FITS file and visualizes it as a continuous 3D volume.
+- Useful for visualizing the overall structure and distribution of the data in three dimensions.
+
+
+![Plotly Toolbar](https://github.com/msamil93/Visualization_Analysis_FITS/blob/main/assets/volume_neardist_close.png?raw=true)
+
+## Test Script: fits_drive_upload.ipynb
+
+### Usage
+This script is designed for Google Colab. It mounts Google Drive, reads a FITS file, and saves each slice as an image in a specified directory.
+Can be used to prepare data for testing `testing_visualization.ipynb`.
+
+### How It Works
+- Mounts Google Drive and reads a FITS file.
+- Saves each slice of the FITS file as an image in Google Drive.
+- These images can later be downloaded and used for testing.
+
+## Test Script: testing_visualization.ipynb
+
+### Usage
+- Download the images saved by `fits_drive_upload.ipynb`.
+- Update the `folder_path` variable to point to the directory containing the images.
+- Run the script in a Python environment using the following command:
+
+```python testing_visualization.ipynb```
+
+### How It Works
+- Reads images from a specified directory.
+- Visualizes them in 3D space using Plotly's Mesh3d.
+- Tests the opacity feature by displaying the images with a fixed opacity.
+
+## Test Script: testing_volume.ipynb
+
+### Usage
+Run the script in a Python environment using the following command:
+
+```python testing_volume.ipynb```
+### How It Works
+- Reads data from a FITS file.
+- Visualizes it as a 3D volume using Plotly.
+- Validates the functionality of `fits_volume.ipynb`.
+
+### Customization
+- Modify FITS file paths and other parameters to visualize different datasets.
+- Explore different visualization styles and parameters in `fits_data_visualization.ipynb` and `fits_volume.ipynb`.
+
+### Contributions
+Contributions to this project are welcome! If you have suggestions for improvements or new features, feel free to create an issue or submit a pull request.
+
+#### How to Contribute
+- Fork the repository.
+- Create a new branch for your feature.
+- Add your changes and commit them.
+- Push to your fork and submit a pull request.
+
+#### Contribution Guidelines
+- Please provide a clear and detailed explanation of your changes or additions.
+- Ensure your code adheres to the existing style of the project to maintain consistency.
+- Update the documentation accordingly if your changes are significant.
+
+### Support and Documentation
+For additional information, usage instructions, and support, please refer to the documentation provided in the repository. If you encounter any issues or have questions, open an issue in the repository, and we will do our best to help.
 
