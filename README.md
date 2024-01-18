@@ -50,28 +50,31 @@ The `fits_data_visualization.ipynb` script is designed to visualize astronomical
      ])
      ```
 
-  #### Transformation with `all_pix2world`:
+  2. **Transformation with `all_pix2world`**:
   The `all_pix2world` method is applied to these pixel coordinates. This process involves several steps:
 
-  - **Reference Point Adjustment:** The pixel coordinates are referenced to a specific point in the image, usually central or of scientific significance.
+    - **Reference Point Adjustment:** The pixel coordinates are referenced to a specific point in the image, usually central or of scientific significance.
 
-  - **Scale and Orientation Application:** Scaling factors and rotational parameters are applied to align the pixel grid with the celestial coordinate grid.
+    - **Scale and Orientation Application:** Scaling factors and rotational parameters are applied to align the pixel grid with the celestial coordinate grid.
 
-  - **Projection to Celestial Sphere:** The aligned coordinates are projected onto the celestial sphere, converting them into RA and Dec coordinates.
+    - **Projection to Celestial Sphere:** The aligned coordinates are projected onto the celestial sphere, converting them into RA and Dec coordinates.
 
   This method accounts for potential distortions and non-linear mappings in the image data.
 
-  ```python
-  wcs_corners = wcs.all_pix2world(pixel_corners, 0)
-  ra_corners = [wcs_corner[0] for wcs_corner in wcs_corners]
-  dec_corners = [wcs_corner[1] for wcs_corner in wcs_corners]
+        ```python
+        wcs_corners = wcs.all_pix2world(pixel_corners, 0)
+        ra_corners = [wcs_corner[0] for wcs_corner in wcs_corners]
+        dec_corners = [wcs_corner[1] for wcs_corner in wcs_corners] 
 
-#### Output:
-The result is an array of celestial coordinates (RA and Dec) corresponding to the input pixel coordinates. This accurate mapping is essential for astronomical analysis and research.
+   3. **Output**:
 
-The `wcs.all_pix2world` method ensures a precise and adaptable transformation of coordinates, suitable for the diverse WCS configurations in different FITS files.
+  The result is an array of celestial coordinates (RA and Dec) corresponding to the input pixel coordinates. This accurate mapping is essential for astronomical analysis and research.
+  
+  The `wcs.all_pix2world` method ensures a precise and adaptable transformation of coordinates, suitable for the diverse WCS configurations in different FITS files.
 
-**User Input for Distance Calculation**: The script prompts the user to choose between 'near' or 'far' for the distance calculation method. This choice affects how the script computes distances for each slice of the FITS file, which is essential for accurate visualization.
+  
+
+- **User Input for Distance Calculation**: The script prompts the user to choose between 'near' or 'far' for the distance calculation method. This choice affects how the script computes distances for each slice of the FITS file, which is essential for accurate visualization.
 
   #### Near and Far Distance Calculations
   The calculation of distance is based on the mean velocity observed in each slice, as well as the user's input. The script utilizes the following formulas to compute the 'near' and 'far' distances:
