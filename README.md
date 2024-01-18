@@ -16,7 +16,7 @@ This repository contains scripts for visualizing astronomical data from FITS fil
 **Ensure you have the required libraries installed. You can install them using pip:** 
 
 ```pip install plotly astropy numpy matplotlib opencv-python```
-
+<br><br>
 ## Main Script: fits_data_visualization.ipynb
 ### Detailed Description
 The `fits_data_visualization.ipynb` script is designed to visualize astronomical data contained in FITS files in a detailed and interactive manner. This script is particularly focused on providing a clear view of each individual slice within the FITS file, alongside computed astronomical parameters such as brightness and distance.
@@ -72,7 +72,7 @@ The `fits_data_visualization.ipynb` script is designed to visualize astronomical
   
   The `wcs.all_pix2world` method ensures a precise and adaptable transformation of coordinates, suitable for the diverse WCS configurations in different FITS files.
 
-  
+  <br>
 
 - **User Input for Distance Calculation**: The script prompts the user to choose between 'near' or 'far' for the distance calculation method. This choice affects how the script computes distances for each slice of the FITS file, which is essential for accurate visualization.
 
@@ -133,7 +133,7 @@ Depending on whether 'near' or 'far' is selected, the script uses above given ma
 These calculations allow for the accurate representation of each slice's position in space, providing additional context to the visualization and enhancing the overall understanding of the data.
 
 
-#### 3D Visualization with Plotly:
+### 3D Visualization with Plotly:
 The script employs Plotly's Mesh3d to create a 3D interactive visualization. Each slice is represented with its corresponding brightness and distance, allowing for a detailed exploration of the data. The visualization is interactive, enabling users to rotate, zoom, and pan through the data for thorough examination.
 
 #### Interactive Exploration with Plotly Toolbar
@@ -151,6 +151,7 @@ The visualization created by `fits_data_visualization.ipynb` includes an interac
 - **Snapshot:** Take a snapshot of the current view of the visualization.
 
 Each of these tools can be clicked to activate or deactivate, providing a flexible way to interact with the data. Additionally, users can use the camera icons to switch between different preset views of the visualization, such as top-down or side views.
+<br><br>
 
 ## Additional Script: fits_volume.ipynb
 
@@ -167,6 +168,7 @@ Similar to the main script, `fits_volume.ipynb` visualizes the data as a 3D volu
 
 
 ![Plotly Toolbar](https://github.com/msamil93/Visualization_Analysis_FITS/blob/main/assets/volume_neardist_close.png?raw=true)
+<br>
 
 ## Test Script: fits_drive_upload.ipynb
 
@@ -178,6 +180,7 @@ Can be used to prepare data for testing `testing_visualization.ipynb`.
 - Mounts Google Drive and reads a FITS file.
 - Saves each slice of the FITS file as an image in Google Drive.
 - These images can later be downloaded and used for testing.
+<br>
 
 ## Test Script: testing_visualization.ipynb
 
@@ -192,6 +195,7 @@ Can be used to prepare data for testing `testing_visualization.ipynb`.
 - Reads images from a specified directory.
 - Visualizes them in 3D space using Plotly's Mesh3d.
 - Tests the opacity feature by displaying the images with a fixed opacity.
+<br>
 
 ## Test Script: testing_volume.ipynb
 
@@ -202,26 +206,26 @@ Run the script in a Python environment using the following command:
 ### How It Works
 - Reads data from a FITS file.
 - Visualizes it as a 3D volume using Plotly.
-- Validates the functionality of `fits_volume.ipynb`.
+- Validates the functionality of `fits_volume.ipynb`. <br><br>
 
-### Customization
+## Customization
 - Modify FITS file paths and other parameters to visualize different datasets.
-- Explore different visualization styles and parameters in `fits_data_visualization.ipynb` and `fits_volume.ipynb`.
+- Explore different visualization styles and parameters in `fits_data_visualization.ipynb` and `fits_volume.ipynb`. <br>
 
-### Contributions
-Contributions to this project are welcome! If you have suggestions for improvements or new features, feel free to create an issue or submit a pull request.
+## Contributions
+Contributions to this project are welcome! If you have suggestions for improvements or new features, feel free to create an issue or submit a pull request. <br>
 
-#### How to Contribute
+### How to Contribute
 - Fork the repository.
 - Create a new branch for your feature.
 - Add your changes and commit them.
-- Push to your fork and submit a pull request.
+- Push to your fork and submit a pull request. <br>
 
-#### Contribution Guidelines
+### Contribution Guidelines
 - Please provide a clear and detailed explanation of your changes or additions.
 - Ensure your code adheres to the existing style of the project to maintain consistency.
-- Update the documentation accordingly if your changes are significant.
+- Update the documentation accordingly if your changes are significant. <br><br>
 
-### Support and Documentation
+## Support and Documentation
 For additional information, usage instructions, and support, please refer to the documentation provided in the repository. If you encounter any issues or have questions, open an issue in the repository, and we will do our best to help.
 
