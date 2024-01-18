@@ -71,7 +71,7 @@ The result is an array of celestial coordinates (RA and Dec) corresponding to th
 
 The `wcs.all_pix2world` method ensures a precise and adaptable transformation of coordinates, suitable for the diverse WCS configurations in different FITS files.
 
-- **User Input for Distance Calculation**: The script prompts the user to choose between 'near' or 'far' for the distance calculation method. This choice affects how the script computes distances for each slice of the FITS file, which is essential for accurate visualization.
+**User Input for Distance Calculation**: The script prompts the user to choose between 'near' or 'far' for the distance calculation method. This choice affects how the script computes distances for each slice of the FITS file, which is essential for accurate visualization.
 
   #### Near and Far Distance Calculations
   The calculation of distance is based on the mean velocity observed in each slice, as well as the user's input. The script utilizes the following formulas to compute the 'near' and 'far' distances:
